@@ -4,15 +4,21 @@ import * as React from "react";
 import * as ReactDOM from "react-dom/server";
 
 const icon = readFileSync(`${__dirname}/../_img/tsumugu.png`).toString('base64');
+const font = readFileSync(`${__dirname}/../_font/MPLUS1p-Light.ttf`).toString('base64');
 
 const style = `
-  @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300&display=swap');
+  @font-face {
+    font-family: 'M PLUS 1p';
+    font-style: normal;
+    font-weight: normal;
+    src: url(data:application/x-font-ttf;base64,${font}) format("truetype");
+  }
 
   html, body {
     height: 100%;
     display: grid;
     margin: 0;
-    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-family: 'M PLUS 1p', sans-serif;
   }
 
   * {
