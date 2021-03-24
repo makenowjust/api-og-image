@@ -3,8 +3,6 @@ import chromium from "chrome-aws-lambda";
 
 import * as template from "./_lib/template";
 
-const isDev = process.env.NODE_ENV === "development";
-
 export default async (req: VercelRequest, res: VercelResponse) => {
   try {
     const props = {
