@@ -8,8 +8,8 @@
 
 **Parameters**:
 
-- `title`: a title text for a OGP image
-- `info`: a information text for a OGP image
+- `title`: a title text for the OGP image
+- `info`: an information text for the OGP image
 
 **Preview**:
 

@@ -4,21 +4,15 @@ import * as React from "react";
 import * as ReactDOM from "react-dom/server";
 
 const icon = readFileSync(`${__dirname}/../_img/tsumugu.png`).toString('base64');
-const font = readFileSync(`${__dirname}/../_font/MPLUS1p-Thin.ttf`).toString('base64');
 
 const style = `
-  @font-face {
-    font-family: 'M PLUS 1p';
-    font-style: normal;
-    font-weight: normal;
-    src: url(data:application/x-font-ttf;base64,${font}) format("truetype");
-  }
+  @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300&display=swap');
 
   html, body {
     height: 100%;
     display: grid;
     margin: 0;
-    font-family: 'M PLUS 1p', sans-serif;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
   }
 
   * {
@@ -61,7 +55,8 @@ export type TemplateProps = {
 export const Template = (props: TemplateProps) => (
   <html>
     <head>
-      <style dangerouslySetInnerHTML={{__html: style}}></style>
+      <meta name="viewport" content="width=device-width,initial-scale=1" />
+      <style dangerouslySetInnerHTML={{__html: style}} />
     </head>
     <body>
       <p><img width={200} height={200} src={`data:image/png;base64,${icon}`} /></p>
